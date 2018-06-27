@@ -17,13 +17,17 @@ public class TestSudoku {
     }
 
     private static void testSolution() {
-        String s = "000000090943007580016090730020000000004010200000000050057060840061500329080000000";
+        String s = "050003100000010007800405000406000900090000020008000503000501008300090000009800010";
         SudokuEval sudokuEval = new SudokuEval();
-        byte[][] map = sudokuEval.input(s)
+        SudokuEval input = sudokuEval.input(s);
+        System.out.println("题目如下:");
+        SudokuChecker.showSudokuMap(input.getMap());
+        System.out.println("解题中...");
+        byte[][] map = input
                 .solution()
                 .getMap();
         SudokuChecker.showSudokuMap(map);
         long time = sudokuEval.getSolutionTime();
-        System.out.println("解题耗时：" + time + "ms");
+        System.out.println("解题完毕！耗时：" + time + "ms");
     }
 }

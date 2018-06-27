@@ -32,7 +32,7 @@ public class SudokuFactory {
     /**
      * 根据等级获取数独题目
      *
-     * @param level 等级 1-4 对应 初级 中级 高级 骨灰级
+     * @param level 等级 1-5 对应 入门 初级 中级 高级 骨灰级
      * @return 返回 数独二维数组
      */
     public byte[][] getMap(int level) {
