@@ -88,6 +88,7 @@ public class SudokuChecker {
      */
     public static List<Cell> getRepeatCell(byte[][] map, int x, int y) {
         List<Cell> list = new ArrayList<>();
+        if (map[x][y] == 0) return list;
         for (int i = 0; i < 9; i++) {
             if (map[x][i] == map[x][y] && i != y) {
                 list.add(new Cell(x, i));

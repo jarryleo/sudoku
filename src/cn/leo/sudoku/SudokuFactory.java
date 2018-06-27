@@ -19,6 +19,7 @@ public class SudokuFactory {
         Random r = new Random();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
+                if (map[i][j] > 0) continue;
                 List<Integer> inputNum = SudokuChecker.findCellCanInputNum(map, i, j);
                 if (inputNum.size() == 0) return false;
                 int n = r.nextInt(inputNum.size());
