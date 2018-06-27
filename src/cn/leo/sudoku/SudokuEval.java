@@ -72,7 +72,7 @@ public class SudokuEval {
 
     /**
      * 唯一数解法
-     * 一个空的候选数只有1个数即确定
+     * 一个格子的候选数只有1个数即确定
      */
     private boolean planA() {
         boolean flag = false;
@@ -102,7 +102,6 @@ public class SudokuEval {
     /**
      * 排除法
      * 目标方格所处九宫的另外两行和两列都有这个数，
-     * 且本行本列其它空不能填这个数
      */
     private boolean planB() {
         boolean flag = false;
@@ -148,12 +147,14 @@ public class SudokuEval {
      * 暴力破解
      */
     private boolean planC() {
+        int count = 1;
         boolean flag = false;
         byte[][] bytes = copyMap();
         boolean violence = violence(bytes);
         while (!violence) {
             bytes = copyMap();
             violence = violence(bytes);
+            count++;
         }
         flag = true;
         map = copyMap();
