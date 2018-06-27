@@ -17,16 +17,7 @@ public class TestSudoku {
     }
 
     private static void testSolution() {
-        String s =
-                        "080630900" +
-                        "360070008" +
-                        "000104305" +
-                        "700005100" +
-                        "008020600" +
-                        "002900004" +
-                        "203408000" +
-                        "800060031" +
-                        "004051090";
+        String s ="000000090943007580016090730020000000004010200000000050057060840061500329080000000";
         SudokuEval sudokuEval = new SudokuEval();
         byte[][] map = sudokuEval.input(s)
                 .solution()
