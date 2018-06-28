@@ -12,7 +12,10 @@ public class TestSudoku {
 
     private static void testCreate() {
         SudokuFactory sudokuFactory = SudokuFactory.create(SudokuFactory.ENTRY_LEVEL);
+        System.out.println("题目生成：");
         SudokuChecker.showSudokuMap(sudokuFactory.getTitle());
+        System.out.println("答案：");
+        SudokuChecker.showSudokuMap(sudokuFactory.getAnswer());
     }
 
     private static void testSolution() {
