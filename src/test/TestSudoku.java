@@ -6,18 +6,17 @@ import cn.leo.sudoku.SudokuFactory;
 
 public class TestSudoku {
     public static void main(String[] args) {
-        //testCreate();
-        testSolution();
+        testCreate();
+        //testSolution();
     }
 
     private static void testCreate() {
-        SudokuFactory sudokuFactory = new SudokuFactory();
-        byte[][] map = sudokuFactory.getMap(0);
-        SudokuChecker.showSudokuMap(map);
+        SudokuFactory sudokuFactory = SudokuFactory.create(SudokuFactory.ENTRY_LEVEL);
+        SudokuChecker.showSudokuMap(sudokuFactory.getTitle());
     }
 
     private static void testSolution() {
-        String s = "050003100000010007800405000406000900090000020008000503000501008300090000009800010";
+        String s = "005300000800000020070010500400005300010070006003200080060500009004000030000009700";
         SudokuEval sudokuEval = new SudokuEval();
         SudokuEval input = sudokuEval.input(s);
         System.out.println("题目如下:");
